@@ -37,7 +37,7 @@ export default function CountryPage(props: CountryPageProps) {
               </CountryCard><h2>Borders</h2><div className={styles.borders}>
                   {borders.map((border) => (
                     <CountryCard key={border.cca2} country={border} width={99} testid={`border-card-${border.cca2}`}>
-                      <div className={styles.content} data-testid={`border-card-content-${border.cca2}`}>
+                      <div className={styles.borderContent} data-testid={`border-card-content-${border.cca2}`}>
                         <p><b>Name:</b> {border.name.common}</p>
                         <Capital capital={border.capital} />
                         <p><b>Population: </b>{border.population.toLocaleString("en-US")}</p>

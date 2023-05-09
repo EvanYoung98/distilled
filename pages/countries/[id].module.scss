@@ -26,21 +26,22 @@
     text-align: center;
   }
   .content {
-    height: 200px;
+    height: fit-content;
     max-width: 300px;
   }
+}
 
-  .borders {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    width: 100vw;
-    .content {
-      height: 150px;
-      max-width: 150px;
-    }
-  }
+.borders {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100vw;
+}
+
+.borderContent {
+  height: 150px;
+  max-width: 150px;
 }
