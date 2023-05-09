@@ -9,6 +9,13 @@ type DashboardLayoutProps = {
 export default function Layout({ children, showHomeButton = false }: DashboardLayoutProps) {
   return (
     <main className={styles.app}>
+    <style jsx global>{`
+        body {
+          width: 100%;
+          margin: 0;
+        }
+    ` }
+    </style>
       <h1>Countries App</h1>
       {
         showHomeButton && (
