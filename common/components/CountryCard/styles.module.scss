@@ -1,0 +1,25 @@
+.card {
+  background-color: rgba(27, 167, 44, 0.18);
+  display: block;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 16px;
+  padding: 16px;
+  // height: 400px;
+  width: fit-content;
+
+  p {
+    color: rgb(53, 50, 50);
+    text-decoration: none !important;
+  }
+}
+
+.content {
+  display: grid;
+  margin: 16px auto;
+  width: fit-content;
+  img {
+    margin: 0 auto;
+  }
+}

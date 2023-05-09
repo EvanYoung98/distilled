@@ -1,0 +1,46 @@
+.homeButton {
+  border: 1px solid black;
+  top: 16px;
+  left: 16px;
+  color: rgb(53, 50, 50);
+  text-decoration: none !important;
+  position: absolute;
+  width: 200px;
+  height: fit-content;
+  text-align: center;
+  border-radius: 4px;
+  &:hover {
+    background-color: rgba(27, 167, 44, 0.18);;
+  }
+  p {
+    color: rgb(53, 50, 50);
+    text-decoration: none !important;
+  }
+}
+
+.mainCard {  
+  >:first-child {
+    margin: 0 auto;
+  }
+  h2 {
+    text-align: center;
+  }
+  .content {
+    height: 200px;
+    max-width: 300px;
+  }
+
+  .borders {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 100vw;
+    .content {
+      height: 150px;
+      max-width: 150px;
+    }
+  }
+}
