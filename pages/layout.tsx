@@ -17,7 +17,6 @@ export default function Layout({ children, showHomeButton = false }: DashboardLa
         }
     ` }
     </style>
-    <div className={styles.navBar}>
       <h1>Countries App</h1>
       {
         showHomeButton && (
@@ -27,7 +26,6 @@ export default function Layout({ children, showHomeButton = false }: DashboardLa
         )
       }
       {children}
-    </div>
     </main>
   )
 }
