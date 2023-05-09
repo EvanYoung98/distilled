@@ -11,25 +11,40 @@ describe('Home', () => {
   });
 
   it('renders main card', () => {
-    render(<CountryPage country={mockCountry} borders={mockBorders}/>);
+    render(<CountryPage country={mockCountry} borders={mockBorders} err={false}/>);
  
     const heading = screen.getByRole('heading', {
       name: 'Countries App',
     });
  
     expect(heading).toBeInTheDocument();
+    expect(screen.queryByTestId('error-message')).toBeFalsy();
 
     const mainCardLink = screen.getByTestId('PT');
     expect(mainCardLink).toHaveAttribute('href', '/countries/PT')
 
-    const mainCardContent = screen.getByTestId('main-card-content');
+    const mainCardContent = screen.getByTestId('PT-main-card-content');
  
     expect(mainCardContent).toHaveTextContent('PortugalCapital: LisbonPopulation: 10,305,564Currency: EuroLanguage: Portuguese')
 
   });
 
+  it('renders error', () => {
+    render(<CountryPage country={mockCountry} borders={mockBorders} err={true}/>);
+ 
+    const heading = screen.getByRole('heading', {
+      name: 'Countries App',
+    });
+ 
+    expect(heading).toBeInTheDocument();
+    expect(screen.queryByTestId('error-message')).toBeTruthy();
+
+    expect(screen.queryByTestId('PT')).toBeFalsy();
+
+  });
+
   it('renders main card with no borders', () => {
-    render(<CountryPage country={mockCountry} borders={mockBorders}/>);
+    render(<CountryPage country={mockCountry} borders={mockBorders} err={false}/>);
  
     const heading = screen.getByRole('heading', {
       name: 'Countries App',
@@ -40,14 +55,14 @@ describe('Home', () => {
     const mainCardLink = screen.getByTestId('PT');
     expect(mainCardLink).toHaveAttribute('href', '/countries/PT')
 
-    const mainCardContent = screen.getByTestId('main-card-content');
+    const mainCardContent = screen.getByTestId('PT-main-card-content');
  
     expect(mainCardContent).toHaveTextContent('PortugalCapital: LisbonPopulation: 10,305,564Currency: EuroLanguage: Portuguese')
 
   });
 
   it('renders main card with more than one langauge and one currency', () => {
-    render(<CountryPage country={mockCountryTwoLanguagesTwoCurrencies} borders={mockBorders}/>);
+    render(<CountryPage country={mockCountryTwoLanguagesTwoCurrencies} borders={mockBorders} err={false}/>);
  
     const heading = screen.getByRole('heading', {
       name: 'Countries App',
@@ -58,14 +73,14 @@ describe('Home', () => {
     const mainCardLink = screen.getByTestId('PT');
     expect(mainCardLink).toHaveAttribute('href', '/countries/PT')
 
-    const mainCardContent = screen.getByTestId('main-card-content');
+    const mainCardContent = screen.getByTestId('PT-main-card-content');
  
     expect(mainCardContent).toHaveTextContent('PortugalCapital: LisbonPopulation: 10,305,564Currencies: Euro, Euro1Languages: Portuguese, English')
 
   });
 
   it('renders border cards', () => {
-    render(<CountryPage country={mockCountry} borders={mockBorders}/>);
+    render(<CountryPage country={mockCountry} borders={mockBorders} err={false}/>);
 
     const spainBorderCard = screen.getByTestId('border-card-ES');
     expect(spainBorderCard).toHaveAttribute('href', '/countries/ES')
@@ -108,6 +123,22 @@ describe('Home', () => {
     const response = await getStaticProps(context as GetServerSidePropsContext);
     expect(response.props.country).toEqual(mockCountryNoBorder);
     expect(response.props.borders).toEqual([]);
+  })
+
+  it('handles prop error', async () => {
+    fetch.mockRejectOnce(
+      {},
+      'https://restcountries.com/v3.1/alpha/PT?fields=name,capital,borders,currencies,cca2,flags,population,languages',
+    );
+    const context = {
+      params: {
+        id: 'PT'
+      } as ParsedUrlQuery
+    }
+    const response = await getStaticProps(context as GetServerSidePropsContext);
+    expect(response.props.country).toEqual({});
+    expect(response.props.borders).toEqual([]);
+    expect(response.props.err).toEqual(true);
   })
 
   it('handles static paths', async () => {
