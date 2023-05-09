@@ -13,20 +13,21 @@ export default function Layout({ children, showHomeButton = false }: DashboardLa
         body {
           width: 100%;
           margin: 0;
+          background-color: #e8f4ea;
         }
     ` }
     </style>
-      <div className={styles.navBar}>
-        <h1>Countries App</h1>
-        {
-          showHomeButton && (
-            <Link href={`/`} className={styles.homeButton} data-testid="home-button">
-              <p>HOME</p>
-            </Link>
-          )
-        }
-        {children}
-      </div>
+    <div className={styles.navBar}>
+      <h1>Countries App</h1>
+      {
+        showHomeButton && (
+          <Link href={`/`} className={styles.homeButton} data-testid="home-button">
+            <p>HOME</p>
+          </Link>
+        )
+      }
+      {children}
+    </div>
     </main>
   )
 }
