@@ -21,7 +21,7 @@ describe('Home', () => {
     expect(screen.queryByTestId('error-message')).toBeFalsy();
 
     const mainCardLink = screen.getByTestId('PT');
-    expect(mainCardLink).toHaveAttribute('href', '/countries/PT')
+    expect(mainCardLink).not.toHaveAttribute('href', '/countries/PT')
 
     const mainCardContent = screen.getByTestId('PT-main-card-content');
  
@@ -53,7 +53,7 @@ describe('Home', () => {
     expect(heading).toBeInTheDocument();
 
     const mainCardLink = screen.getByTestId('PT');
-    expect(mainCardLink).toHaveAttribute('href', '/countries/PT')
+    expect(mainCardLink).not.toHaveAttribute('href', '/countries/PT')
 
     const mainCardContent = screen.getByTestId('PT-main-card-content');
  
@@ -71,7 +71,7 @@ describe('Home', () => {
     expect(heading).toBeInTheDocument();
 
     const mainCardLink = screen.getByTestId('PT');
-    expect(mainCardLink).toHaveAttribute('href', '/countries/PT')
+    expect(mainCardLink).not.toHaveAttribute('href', '/countries/PT')
 
     const mainCardContent = screen.getByTestId('PT-main-card-content');
  

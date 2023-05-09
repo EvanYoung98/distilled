@@ -26,7 +26,7 @@ export default function CountryPage(props: CountryPageProps) {
             <p data-testid="error-message">There was an error</p>
           ) : (
             <>
-              <CountryCard key={country.cca2} country={country} width={300} testid={country.cca2}>
+              <CountryCard key={country.cca2} country={country} width={300} testid={country.cca2} clickable={false}>
                 <div className={styles.content} data-testid={`${country.cca2}-main-card-content`}>
                   <p><b>Name:</b> {name.common}</p>
                   <Capital capital={capital} />

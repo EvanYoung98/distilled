@@ -7,7 +7,7 @@ describe('Navigation', () => {
     cy.get('@portugal').click();
     cy.url().should('contain', '/countries/PT');
     cy.get('[data-testid="PT"]').as('portugalMainCard').should('exist');
-    cy.get('@portugalMainCard').should('have.attr', 'href', '/countries/PT');
+    cy.get('@portugalMainCard').should('not.have.attr', 'href', '/countries/PT');
     cy.get('[data-testid="PT-main-card-content"]').as('cardContent').should('exist');
     cy.get('@cardContent').children().eq(0).should('have.text', 'Name: Portugal')
     cy.get('@cardContent').children().eq(1).should('have.text', 'Capital: Lisbon')
@@ -27,7 +27,7 @@ describe('Navigation', () => {
     //Spanish main card
     cy.get('@spainBorderCard').click();
     cy.get('[data-testid="ES"]').as('spanishMainCard').should('exist');
-    cy.get('@spanishMainCard').should('have.attr', 'href', '/countries/ES');
+    cy.get('@spanishMainCard').should('not.have.attr', 'href', '/countries/ES');
     cy.get('[data-testid="ES-main-card-content"]').as('cardContent').should('exist');
     cy.get('@cardContent').children().eq(0).should('have.text', 'Name: Spain')
     cy.get('@cardContent').children().eq(1).should('have.text', 'Capital: Madrid')

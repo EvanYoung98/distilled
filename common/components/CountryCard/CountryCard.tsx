@@ -9,18 +9,33 @@ interface CountryCardTypes {
   width: number
   children: React.ReactNode
   testid?: string;
+  clickable?: boolean
 }
 
 const CountryCard: FC<CountryCardTypes> = (props) => {
-  const { country, width, children, testid } = props;
+  const { country, width, children, testid, clickable = true } = props;
   const {flags, cca2} = country;
+  const content = (
+    <div className={styles.content}>
+      <Image src={flags.svg} alt={country.flags.alt} width={width} height={width*.66} data-testid={`${cca2}-image`}/>
+      {children}
+    </div>
+  )
   return (
-    <Link href={`/countries/${cca2}`} className={styles.card} data-testid={testid}>
-      <div className={styles.content}>
-        <Image src={flags.svg} alt={country.flags.alt} width={width} height={width*.66} data-testid={`${cca2}-image`}/>
-        {children}
-      </div>
-    </Link>
+    <>
+      {
+        clickable ? (
+          <Link href={`/countries/${cca2}`} className={styles.card} data-testid={testid}>
+            {content}
+          </Link>
+        ) :
+        (
+          <div className={styles.card} data-testid={testid}>
+            {content}
+          </div>
+        )
+      }
+    </>
   )
 }
 
