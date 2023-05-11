@@ -3,7 +3,7 @@ import { countryType } from '@/common/types/country';
 import { GetStaticProps } from 'next'
 import CountryCard from '@/common/components/CountryCard/CountryCard';
 import styles from './index.module.scss';
-import Layout from '@/common/layout';
+import Layout from '@/common/components/Layout/layout';
 import Capital from '@/common/components/Capital/Capital.component';
 import CardLayout from '@/common/components/CardLayout/CardLayout';
 interface HomePropType {

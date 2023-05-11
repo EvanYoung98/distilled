@@ -1,6 +1,6 @@
 import { languageRes } from '@/common/types/country';
 import { GetStaticProps } from 'next'
-import Layout from '@/common/layout';
+import Layout from '@/common/components/Layout/layout';
 import Link from 'next/link';
 import styles from './[id].module.scss';
 

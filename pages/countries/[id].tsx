@@ -1,9 +1,8 @@
 import { countryType, detailedCountryType } from '@/common/types/country';
 import { GetStaticProps } from 'next'
-import Layout from '@/common/layout';
+import Layout from '@/common/components/Layout/layout';
 import styles from './[id].module.scss';
 import CountryCard from '@/common/components/CountryCard/CountryCard';
-import Link from 'next/link';
 import { getCurrencies, getLanguages } from '@/common/utils';
 import Capital from '@/common/components/Capital/Capital.component';
 import CardLayout from '@/common/components/CardLayout/CardLayout';

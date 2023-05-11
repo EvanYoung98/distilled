@@ -3,7 +3,7 @@ import { GetStaticProps } from 'next'
 import styles from './[id].module.scss';
 import CountryCard from '@/common/components/CountryCard/CountryCard';
 import CardLayout from '@/common/components/CardLayout/CardLayout';
-import Layout from '@/common/layout';
+import Layout from '@/common/components/Layout/layout';
 
 interface CountryPageProps {
   countries: countryType[];
