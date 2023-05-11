@@ -25,12 +25,12 @@ const CountryCard: FC<CountryCardTypes> = (props) => {
     <>
       {
         clickable ? (
-          <Link href={`/countries/${cca2}`} className={styles.card} data-testid={testid}>
+          <Link href={`/countries/${cca2}`} className={styles.cardLink} data-testid={testid}>
             {content}
           </Link>
         ) :
         (
-          <div className={styles.card} data-testid={testid}>
+          <div className={styles.cardDiv} data-testid={testid}>
             {content}
           </div>
         )

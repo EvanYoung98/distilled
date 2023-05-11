@@ -45,3 +45,9 @@ export interface detailedCountryType {
   borders: string[];
   languages: languageType;
 }
+
+export interface languageRes {
+  languages: {
+    [key: string]: string
+  }
+}

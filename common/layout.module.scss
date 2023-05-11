@@ -1,0 +1,40 @@
+.app {
+  font-family:Arial, Helvetica, sans-serif;
+  h1, h2 {
+    text-align: center;
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  justify-content: center;
+  @media only screen and (max-width:800px) {
+    flex-direction: column;
+  }
+}
+
+
+.homeButton {
+  border: 1px solid black;
+  color: rgb(53, 50, 50);
+  display: block;
+  text-decoration: none !important;
+  width: 200px;
+  height: fit-content;
+  text-align: center;
+  border-radius: 4px;
+  margin-left: 16px;
+  background-color: #d2e7d6;
+  @media only screen and (max-width:800px) {
+    margin: 16px auto;
+  }
+  &:hover {
+    background-color: #b8d8be;
+  }
+  p {
+    color: rgb(53, 50, 50);
+    text-decoration: none !important;
+  }
+}

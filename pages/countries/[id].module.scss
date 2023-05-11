@@ -19,26 +19,13 @@
 }
 
 .mainCard {  
-  >:first-child {
+  div:first-of-type {
     margin: 0 auto;
-  }
-  h2 {
-    text-align: center;
   }
   .content {
     height: fit-content;
     max-width: 300px;
   }
-}
-
-.borders {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  width: 100vw;
 }
 
 .borderContent {

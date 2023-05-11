@@ -1,5 +1,5 @@
 describe('Navigation', () => {
-  it('should navigate to the main page', () => {
+  it('should navigate to the main page and countries page', () => {
     // Start from the index page
     cy.visit('http://localhost:3000/');
     cy.get('[data-testid="PT"]').as('portugal').should('exist');
@@ -46,6 +46,33 @@ describe('Navigation', () => {
 
     //test home button
     cy.get('[data-testid="home-button"]').should('exist').click()
+    cy.url().should('contain', '/');
+    cy.get('[data-testid="IE"]').should('exist'); // check we are on main page by checking Ireland is on page
+  });
+
+  it('should navigate to the main page and languages page', () => {
+    // Start from the index page
+    cy.visit('http://localhost:3000/');
+    cy.get('[data-testid="languages-button"]').as('languagesButton').should('exist');
+    // check portugese main card
+    cy.get('@languagesButton').click();
+    cy.url().should('contain', '/languages');
+    cy.get('[data-testid="languages-button"]').should('not.exist');
+    cy.get('[data-testid="language-Albanian"]').as('albanianLanguage').should('exist');
+    cy.get('@albanianLanguage').click();
+    cy.url().should('contain', '/languages/Albanian');
+    cy.get('[data-testid="lang-card-AL"]').as('albania').should('exist');
+    cy.get('[data-testid="lang-card-XK"]').should('exist');
+    cy.get('@albania').click();
+    cy.url().should('contain', '/languages/Al');
+    cy.get('[data-testid="border-card-content-MK"]').should('exist');
+    cy.get('[data-testid="border-card-content-GR"]').should('exist');
+    cy.get('[data-testid="border-card-content-XK"]').should('exist');
+    cy.get('[data-testid="border-card-content-ME"]').should('exist');
+    cy.get('[data-testid="border-card-content-IE"]').should('not.exist');
+    cy.get('[data-testid="languages-button"]').should('exist');
+    cy.get('[data-testid="home-button"]').as('homeButton').should('exist');
+    cy.get('@homeButton').click();
     cy.url().should('contain', '/');
     cy.get('[data-testid="IE"]').should('exist'); // check we are on main page by checking Ireland is on page
   });

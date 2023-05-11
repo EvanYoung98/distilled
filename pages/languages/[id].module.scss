@@ -1,0 +1,37 @@
+.cardContent {
+  height: 100px;
+  max-width: 150px;
+}
+
+.langCard {
+  background-color: #b8d8be;
+  display: block;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 16px;
+  padding: 16px;
+  height: fit-content;
+  width: 300px;
+  text-decoration: none;
+  color: rgb(53, 50, 50);
+  text-align: center;
+  // line-height: 50px;
+  &:hover {
+    background-color: #8ea793;
+  }
+  p {
+    color: rgb(53, 50, 50);
+    text-decoration: none !important;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 100vw;
+}
