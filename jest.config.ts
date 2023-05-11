@@ -13,6 +13,8 @@ module.exports = {
     '!<rootDir>/coverage/**',
     '!<rootDir>/cypress/**',
     '!<rootDir>/common/types/**',
+    '!<rootDir>/next.config.js',
+
 
   ],
   moduleNameMapper: {
