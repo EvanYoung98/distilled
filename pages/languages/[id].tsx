@@ -16,7 +16,7 @@ export default function LanguagePage(props: CountryPageProps) {
   const language = props.language;
   const err = props.err
   return (
-    <Layout showHomeButton={true}>
+    <Layout showHomeButton={true} showLanguageButton={true}>
       <div className={styles.mainCard}>
         {
           err ? (
