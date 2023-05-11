@@ -60,11 +60,11 @@ describe('Navigation', () => {
     cy.get('[data-testid="languages-button"]').should('not.exist');
     cy.get('[data-testid="language-Albanian"]').as('albanianLanguage').should('exist');
     cy.get('@albanianLanguage').click();
-    cy.url().should('contain', '/languages/Albanian');
+    cy.url().should('contain', '/languages/albanian');
     cy.get('[data-testid="lang-card-AL"]').as('albania').should('exist');
     cy.get('[data-testid="lang-card-XK"]').should('exist');
     cy.get('@albania').click();
-    cy.url().should('contain', '/languages/Al');
+    cy.url().should('contain', '/countries/AL');
     cy.get('[data-testid="border-card-content-MK"]').should('exist');
     cy.get('[data-testid="border-card-content-GR"]').should('exist');
     cy.get('[data-testid="border-card-content-XK"]').should('exist');

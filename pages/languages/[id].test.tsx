@@ -79,9 +79,9 @@ describe('Home', () => {
     const response = await getStaticPaths();
     expect(response.paths).toEqual(
       [
-        { params: { id: 'English' } },
-        { params: { id: 'French' } },
-        { params: { id: 'German' } }
+        { params: { id: 'english' } },
+        { params: { id: 'french' } },
+        { params: { id: 'german' } }
       ]
     );
   })

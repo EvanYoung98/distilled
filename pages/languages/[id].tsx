@@ -72,7 +72,7 @@ export const getStaticPaths = async () => {
     const langVals = lang.languages
     Object.keys(langVals).forEach((key) => {
       if(!languages.includes(langVals[key])) {
-        languages.push(langVals[key])
+        languages.push(langVals[key].toLowerCase())
       }
     });
   })

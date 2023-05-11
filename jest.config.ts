@@ -14,8 +14,6 @@ module.exports = {
     '!<rootDir>/cypress/**',
     '!<rootDir>/common/types/**',
     '!<rootDir>/next.config.js',
-
-
   ],
   moduleNameMapper: {
     // Handle CSS imports (with CSS modules)

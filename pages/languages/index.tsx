@@ -22,7 +22,7 @@ export default function LanguagesPage(props: CountryPageProps) {
         <div className={styles.content}>
         {
           languages.map((lang) => (
-            <Link key={lang} href={`/languages/${lang}`} className={styles.langCard} data-testid={`language-${lang}`}>
+            <Link key={lang} href={`/languages/${lang}`.toLowerCase()} className={styles.langCard} data-testid={`language-${lang}`}>
               {lang}
             </Link>
           ))
