@@ -26,6 +26,12 @@
   }
 }
 
+.mainCard {
+  h2 {
+    text-transform: capitalize;
+  }
+}
+
 .content {
   display: flex;
   align-items: center;
